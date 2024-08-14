@@ -4,23 +4,47 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script>
-
-        function KQ() {
+        function KQ1() {
             let number1 = parseInt(document.getElementById("number1").value);
-            let number2 = parseInt(document.getElementById("number2").value );
-            let sum = number1 + number2;
-
-            document.write('Kết quả tổng là: ' + sum);
+            let number2 = parseInt(document.getElementById("number2").value);
+            let cong = number1 + number2;
+            document.getElementById('result').innerHTML = 'Kết quả là: ' + cong;
         }
+
+        function KQ2() {
+            let number1 = parseInt(document.getElementById("number1").value);
+            let number2 = parseInt(document.getElementById("number2").value);
+            let tru = number1 - number2;
+            document.getElementById('result').innerHTML = 'Kết quả là: ' + tru;
+        }
+
+        function KQ3() {
+            let number1 = parseInt(document.getElementById("number1").value);
+            let number2 = parseInt(document.getElementById("number2").value);
+            let nhan = number1 * number2;
+            document.getElementById('result').innerHTML = 'Kết quả là: ' + nhan;
+        }
+
+        function KQ4() {
+            let number1 = parseInt(document.getElementById("number1").value);
+            let number2 = parseInt(document.getElementById("number2").value);
+            let chia = number1 / number2;
+            document.getElementById('result').innerHTML = 'Kết quả là: ' + chia;
+        }
+
     </script>
 </head>
 <body>
-<form action=" " method="POST">
-    <input type="number" id="number1">
-    <input type="number" id="number2">
-    <button onclick="KQ()">Kết quả</button>
+
+<label><input type="number" id="number1"></label>
+<label><input type="number" id="number2"></label>
+<button onclick="KQ1()">+</button>
+<button onclick="KQ2()">-</button>
+<button onclick="KQ3()">*</button>
+<button onclick="KQ4()">/</button>
+
+<h2 id="result">Kết quả: </h2>
 
 
-</form>
 </body>
 </html>
