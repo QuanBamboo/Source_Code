@@ -3,44 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <title>Ứng dụng chuyển đổi tiền tệ</title>
-    <script src="Ung_dung_chuyen_doi_tien_te.js"></script>
+   <script src="Ung_dung_chuyen_doi_tien_te.js"  ></script>
 </head>
 <body>
-<form action="" method="POST">
 
+<form>
     <table>
         <tr>
-            <th id="amount">Amount</th>
+            <th>Amount</th>
             <th>From Currency</th>
-            <th>to currency</th>
+            <th>To currency</th>
             <th></th>
         </tr>
 
 
         <tr>
-            <td><input type="number"></td>
+            <td><input type="number" id="amount"></td>
             <td>
-                <select>
-                    <option value="VietNam">VietNam</option>
+                <select id="Currency">
+                    <option value="VND">VND</option>
                     <option value="USD">USD</option>
                 </select>
             </td>
             <td>
-                <select>
-                    <option value="VietNam">VietNam</option>
+                <select id="toCurrency">
                     <option value="USD">USD</option>
+                    <option value="VND">VND</option>
+
                 </select>
             </td>
 
             <td>
-                <button style="background-color: blueviolet ; color: white">Convert</button>
+                <button style=" background-color: blueviolet ; color: white" onclick="changeMoney()">
+                    Convert
+                </button>
             </td>
 
         </tr>
 
     </table>
-
-
+    <p id="result">Kết quả là:</p>
 </form>
+
 </body>
 </html>
