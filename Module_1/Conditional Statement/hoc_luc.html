@@ -3,28 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
 </head>
 <body>
 <script>
-    let thang = prompt("Nhap thang: ");
-    if (!NaNthang) {
-        if (thang == 1 || thang == 3 || thang == 5 || thang == 7
-            || thang == 8 || thang == 10 || thang == 12) {
-            alert("thang co 31 ngay");
-        } else if (thang == 4 || thang == 6 || thang == 9) {
-            alert("thang co 30 ngay");
-        }
+    let month = parseInt(prompt("Mời cụ nhập tháng: "));
+
+    //Kiểm tra xem tháng nhập có hợp lệ?
+    if (isNaN(month) || month < 1 || month > 12) {
+        alert("Tháng không hợp lệ, mời cụ nhập lại");
     } else {
-        alert("thang co 28  ngay hoac 29 ngay neu nam nhuan");
+        if (month === 2) {
+            let checkNamNhuan = parseInt(prompt("Mời cụ nhập thêm năm: "));
+            if (checkNamNhuan % 400 === 0 || (checkNamNhuan % 4 === 0 && !checkNamNhuan % 100 === 0)) {
+                alert(`Tháng ${month} năm ${checkNamNhuan} có 29 ngày`);
 
+            } else {
+                alert(`Tháng ${month} năm ${checkNamNhuan} có 28 ngày`);
+            }
+        } else if (month === 4 || month === 6 || month === 9 || month === 11) {
+            alert(`Tháng ${month} có 30 ngày`);
+        } else {
+            alert(`Tháng ${month} có 31 ngày`);
+        }
     }
-
-
-    else
-    {
-        thang = prompt("Nhap lai thang: ");
-    }
-
 
 </script>
 </body>
