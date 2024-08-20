@@ -5,6 +5,116 @@
     <title>Title</title>
 </head>
 <body>
-<script></script>
+<script>
+    // Bài 1: Nhập vào hai số a và b, và kiểm tra xem a có chia hết cho b hay không
+    let a = Number(prompt("Mời cụ nhập số a: "));
+    let b = Number(prompt("Mời cụ nhập số b: "));
+    if (a % b === 0) {
+        alert(`${a} chia hết cho ${b}`);
+    } else {
+        alert(`${a} không chia hết cho ${b}`);
+    }
+
+    // Bài 2: Nhập tuổi và in ra kết quả nếu tuổi học sinh đó không đủ điều kiện vào học lớp 10.
+    let age = Number(prompt("Mời cụ nhập tuổi của cháu: "));
+    if (isNaN(age) || age <= 0) {
+        let age = Number(prompt("Mời cụ nhập tuổi lại của cháu: "));
+    } else if (age > 15) {
+        alert("Cháu nó đủ tuổi vào lớp 10");
+    } else {
+        alert("Cháu nó không đủ tuổi vào lớp 10");
+    }
+
+    //Bài 3: Nhập một số nguyên bất kỳ và in kết quả ra màn hình để nói cho người dùng biết số đó là lớn hay nhỏ hơn 0
+    let int = Number(prompt(" Mời bạn nhập vào số nguyên: "))
+    if (isNaN(int)) {
+        let int = Number(prompt(" Số nguyên không hợp lệ, mời bạn nhập lại: "))
+    } else int > 0 ? alert(`Số ${int} lớn hơn 0`) : alert(`Số ${int} nhỏ hơn 0`);
+    // Bài 4: Nhập 3 số nguyên và tìm giá trị lớn nhất của ba số nguyên đó
+
+    let a1 = Number(prompt("Mời cụ nhập số a: "));
+    if (isNaN(a1)) {
+        let a1 = Number(prompt("Mời cụ nhập lại số a: "));
+    }
+    let a2 = Number(prompt("Mời cụ nhập số a2: "));
+    if (isNaN(a1)) {
+        let a2 = Number(prompt("Mời cụ nhập lại số a2: "));
+    }
+
+    let a3 = Number(prompt("Mời cụ nhập số a3: "));
+    if (isNaN(a1)) {
+        let a3 = Number(prompt("Mời cụ nhập lại số a3: "));
+    }
+    let max = a1;
+    if (max < a2) {
+        max = a2;
+    } else if (max < a3) {
+        max = a3;
+    }
+    alert(`Số lớn nhất là ${max}`);
+
+    // Bài 5: Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ
+
+    let diemTest = Number(prompt("Mời bạn nhập điểm kiểm tra: "));
+    if (isNaN(diemTest)) {
+        let diemTest = Number(prompt("Mời bạn nhập lại điểm kiểm tra: "));
+    }
+    let diemGiuaKy = Number(prompt("Mời bạn nhập điểm giữa kỳ: "));
+    if (isNaN(diemGiuaKy)) {
+        let diemTest = Number(prompt("Mời bạn nhập lại điểm giữa kỳ: "));
+    }
+    let diemCuoiKy = Number(prompt("Mời bạn nhập điểm cuối kỳ: "));
+    if (isNaN(diemTest)) {
+        let diemCuoiKy = Number(prompt("Mời bạn nhập lại điểm cuối kỳ: "));
+    }
+
+    if (diemTest >= 8 && diemCuoiKy >= 8 && diemCuoiKy >= 8) {
+        alert("Bạn được học sinh giỏi ");
+    } else if (diemTest >= 6 && diemCuoiKy >= 6 && diemGiuaKy >= 6) {
+        alert("Bạn được học sinh tiên tiến")
+    } else if (diemTest >= 4 && diemCuoiKy >= 4 && diemGiuaKy >= 4) {
+        alert("Bạn được học sinh trung bình");
+    } else {
+        alert("Bạn được học sinh yếu");
+    }
+
+    // Bài 6: Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng
+
+    let doanhSo = Number(prompt("Mời sếp nhập doanh số: "));
+    let hoaHong;
+    if (isNaN(doanhSo) || doanhSo <= 0) {
+        let doanhSo = Number(prompt("Mời sếp nhập lại doanh số: "));
+    } else if (doanhSo <= 10) {
+        hoaHong = doanhSo + doanhSo * 0.05;
+    } else if (doanhSo >= 20) {
+        hoaHong = doanhSo + doanhSo * 0.06;
+    } else {
+        hoaHong = doanhSo + doanhSo * 0.1;
+    }
+    alert(`Thu nhập tháng này của Sếp là: ${hoaHong}`);
+
+
+    // Bài 7: Tính cước điện thoại cho một hộ gia đình với các thông số đã cho
+
+    let soDien = Number(prompt("Mời Sếp nhập số điện tháng này: "));
+    let money;
+    if (isNaN(soDien) || soDien <= 0) {
+        let soDien = +prompt("Số điện không hợp lệ, mời Sếp nhập lại: ")
+    } else if (soDien <= 50) {
+        money = soDien * 1000;
+        alert(`Tháng này Cụ hết ${money} tiền điện`);
+    } else if (soDien <= 75) {
+        money = 50 * 1000 + (soDien - 50) * 1500;
+        alert(`Tháng này Cụ hết ${money} tiền điện`);
+    } else if (soDien <= 100) {
+        money = 50 * 1000 + 25 * 1500 + (soDien - 75) * 2000;
+        alert(`Tháng này Cụ hết ${money} tiền điện`);
+    } else if (soDien > 100) {
+        money = 50 * 1000 + 25 * 1500 + 25 * 2000 + (soDien - 100) * 3000;
+        alert(`Tháng này Cụ hết ${money} tiền điện`);
+    }
+
+
+</script>
 </body>
-</html>
+</html>43
