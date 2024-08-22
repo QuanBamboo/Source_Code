@@ -7,21 +7,7 @@
 <body>
 
 <script>
-    // function fibo(n) {
-    //     if (n === 0 || n === 1) {
-    //         return 1;
-    //     } else {
-    //         return fibo(n - 1) + fibo(n - 2);
-    //     }
-    // }
-    //
-    // let sum=0;
-    // for (let k = 0; k < 20; k++) {
-    //     let kq = fibo(k);
-    //     sum +=kq;
-    // }
-    // alert(` Tổng của 20 chữ số fibonacci đầu tiên là: ${sum}`);
-    function fibo(n) {
+    let fibo = function (n) {
         if (n === 0 || n === 1) {
             return 1;
         } else {
@@ -29,10 +15,13 @@
         }
     }
 
-
-    for (let i = 0; i < 20; i++) {
+    let n = Number(prompt(" Mời Sếp nhập số lượng sô Fibonacci muốn in: "));
+    while (isNaN(n) || number.isInteger(n) || n < 0) {
+        n = Number(prompt(" Sếp làm ơn nhp lại số lượng sô Fibonacci muốn in: "));
+    }
+    for (let i = 0; i < n; i++) {
         let result = fibo(i);
-        document.write(`${result} <br>`);
+        document.write(` ${result} <br>`);
     }
 
 

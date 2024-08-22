@@ -6,6 +6,24 @@
 </head>
 <body>
 <script>
+
+    //Bài 1:
+    let fibo = function (n) {
+        if (n === 0 || n === 1) {
+            return 1;
+        } else {
+            return fibo(n - 1) + fibo(n - 2);
+        }
+    }
+
+    let n = Number(prompt(" Mời Sếp nhập số lượng sô Fibonacci muốn in: "));
+    while (isNaN(n) || number.isInteger(n) || n<0){
+        n = Number(prompt(" Sếp làm ơn nhập lại số lượng sô Fibonacci muốn in: "));
+    }
+    for (let i = 0; i < n; i++) {
+        document.write(` ${fibo(i)} <br>`);
+    }
+
     //Bài 2:
     let result = 1;
     let number = +prompt("Nhập số nguyên dương: ");
@@ -42,7 +60,6 @@
         document.write("</tr>");
     }
     document.write("</table>");
-
 
 
     //Bài 4:
