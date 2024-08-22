@@ -33,46 +33,59 @@
 
     //Bài 3:
 
-    let a = 0;
-    let b = 1;
-    let tong = 0;
+    function fibo(n) {
+        if (n === 0 || n === 1) {
+            return 1;
+        } else {
+            return fibo(n - 1) + fibo(n - 2);
+        }
+    }
+
+
     for (let i = 0; i < 20; i++) {
-        document.write(a + "<br>");
-        tong = a + b;
-        a = b;
-        b = tong;
+        let result = fibo(i);
+        document.write(`${result} <br>`);
     }
 
     //Bài 4:
 
-    let a = 1;
-    let b = 1;
-    let tong = 0;
-
-    for (let i = 0; i < 10000; i++) {
-        tong = a + b;
-        a = b;
-        b = tong;
-        if (a % 5 === 0) {
-            document.write(a);
-            break;
+    function fibo(n) {
+        if (n === 0 || n === 1) {
+            return 1;
+        } else {
+            return fibo(n - 1) + fibo(n - 2);
         }
-
     }
+
+    let j = 0;
+    while (true) {
+        let result = fibo(j);
+        if (result % 5 === 0) {
+            document.write(` Số đầu tiên trong chuỗi fibonacci chia hết cho 5 là ${result}`);
+            break;
+        } else {
+            j++;
+        }
+    }
+
 
     //Bài 5:
 
-    let a = 0;
-    let b = 1;
-    let temp = 0;
-    let sum = 0;
-    for (let i = 0; i < 30; i++) {
-        sum = a;
-        temp = a + b;
-        a = b;
-        b = temp;
+    function fibo(n) {
+        if (n === 0 || n === 1) {
+            return 1;
+        } else {
+            return fibo(n - 1) + fibo(n - 2);
+        }
     }
-    alert(` Tổng của 30 số fibonacci đầu tiên là: ${sum}`);
+
+    let sum=0;
+    for (let k = 0; k < 20; k++) {
+        let kq = fibo(k);
+        sum +=kq;
+    }
+    alert(` Tổng của 20 chữ số fibonacci đầu tiên là: ${sum}`);
+
     //Bài 6:
 
     let count = 0;

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -7,6 +7,34 @@
 <body>
 
 <script>
+    // function fibo(n) {
+    //     if (n === 0 || n === 1) {
+    //         return 1;
+    //     } else {
+    //         return fibo(n - 1) + fibo(n - 2);
+    //     }
+    // }
+    //
+    // let sum=0;
+    // for (let k = 0; k < 20; k++) {
+    //     let kq = fibo(k);
+    //     sum +=kq;
+    // }
+    // alert(` Tổng của 20 chữ số fibonacci đầu tiên là: ${sum}`);
+    function fibo(n) {
+        if (n === 0 || n === 1) {
+            return 1;
+        } else {
+            return fibo(n - 1) + fibo(n - 2);
+        }
+    }
+
+
+    for (let i = 0; i < 20; i++) {
+        let result = fibo(i);
+        document.write(`${result} <br>`);
+    }
+
 
 </script>
 </body>
