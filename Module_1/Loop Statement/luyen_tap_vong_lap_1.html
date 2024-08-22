@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    //Bài 1:
+    for (let i = 1; i <= 100; i++) {
+        if (i === 99) {
+            alert("Đã hoàn thành");
+            break;
+        }
+    }
+
+    //Bài 2:
+
+    let tem = Number(prompt(" Nhập nhiệt độ hiện tại: "))
+    while (isNaN(tem)) {
+        tem = Number(prompt(" Nhập lại nhiệt độ hiện tại: "));
+    }
+
+    if (tem > 100) {
+        alert("Giảm nhiệt độ");
+    } else if (tem < 20) {
+        alert("Tăng nhiệt độ");
+    } else {
+        alert("Không cần làm gì");
+    }
+
+
+    //Bài 3:
+
+    let a = 0;
+    let b = 1;
+    let tong = 0;
+    for (let i = 0; i < 20; i++) {
+        document.write(a + "<br>");
+        tong = a + b;
+        a = b;
+        b = tong;
+    }
+
+    //Bài 4:
+
+    let a = 1;
+    let b = 1;
+    let tong = 0;
+
+    for (let i = 0; i < 10000; i++) {
+        tong = a + b;
+        a = b;
+        b = tong;
+        if (a % 5 === 0) {
+            document.write(a);
+            break;
+        }
+
+    }
+
+    //Bài 5:
+
+    let a = 0;
+    let b = 1;
+    let temp = 0;
+    let sum = 0;
+    for (let i = 0; i < 30; i++) {
+        sum = a;
+        temp = a + b;
+        a = b;
+        b = temp;
+    }
+    alert(` Tổng của 30 số fibonacci đầu tiên là: ${sum}`);
+    //Bài 6:
+
+    let count = 0;
+    let result = 0;
+    let i = 7;
+
+
+    while (count < 30) {
+        if (i % 7 === 0) {
+            result = result + i;
+            count++;
+        }
+        i++;
+    }
+    alert(` Tổng là: ${result}`);
+
+
+    //Bài 7:
+
+    for (let i = 1; i <= 100; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+            document.write("FizzBuzz" + "<br>");
+        } else if (i % 3 === 0) {
+            document.write("Fizz" + "<br>");
+        } else if (i % 5 === 0) {
+            document.write("Buzz" + "<br>");
+        } else {
+            document.write(`${i} <br>`);
+        }
+    }
+
+
+    //Bài 8:
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Bài 2:
+    let result = 1;
+    let number = +prompt("Nhập số nguyên dương: ");
+    while (isNaN(number) || number < 0 || number % 1 !== 0) {
+        number = +prompt("Mời bạn nhập lại: ")
+    }
+    if ((number === 0)) {
+        alert(` Giai thừa của ${number} là: 1`);
+    } else {
+        for (let i = 1; i <= number; i++) {
+            result = result * i;
+        }
+        alert(` Giai thừa của ${number} là: ${result}`);
+    }
+
+    //Bài 3:
+
+    document.write("<table >");
+
+    for (let i1 = 1; i1 <= 5; i1++) {
+        document.write("<tr>");
+        for (let j1 = 1; j1 <= i1; j1++) {
+            document.write("<td>*</td>")
+        }
+        document.write("<tr>");
+    }
+    document.write("</table>");
+
+    document.write("<table>");
+    for (let i2 = 1; i2 <= 5; i2++) {
+        for (let j2 = 5; j2 >= i2; j2--) {
+            document.write("<td>*</td>");
+        }
+        document.write("</tr>");
+    }
+    document.write("</table>");
+
+
+
+    //Bài 4:
+    let width = +prompt("Nhập chiều dài HCN:");
+    while (isNaN(width) || width <= 0 || width % 1 !== 0) {
+        width = +prompt("Mời bạn nhập lại chiều dài:");
+    }
+    let heigth = +prompt("Nhập chiều cao HCN");
+    while (isNaN(heigth) || heigth <= 0 || heigth % 1 !== 0) {
+        heigth = +prompt("Mời bạn nhập lại chiều cao: ")
+    }
+    document.write("<table >");
+    for (let i = 1; i <= heigth; i++) {
+        document.write("<tr>");
+        for (let j = 1; j <= width; j++) {
+
+            if (i !== 1 && i !== heigth && j !== 1 && j !== width) {
+                document.write("<td></td>");
+            } else {
+                document.write("<td>*</td>");
+            }
+        }
+        document.write("<tr>");
+    }
+    document.write("</table>");
+
+    //Bài 5:
+    let soTien = Number(prompt("Nhập số tiền: "));
+    while (isNaN(soTien) || soTien <= 0 || soTien % 1 !== 0) {
+        soTien = Number(prompt("Nhập lại số tiền hợp lệ: "));
+    }
+
+    let laiSuat = Number(prompt("Nhập lãi suất: "))
+    while (isNaN(laiSuat) || laiSuat < 0) {
+        laiSuat = number(prompt("Nhập lại lãi suất hợp lệ: "));
+    }
+
+    let month = Number(prompt("Nhập số tháng vay: "));
+    while (isNaN(month) || month <= 0 || month % 1 !== 0) {
+        month = +prompt("Nhập lại số tháng hợp lệ: ");
+    }
+
+    let result = soTien;
+    for (let i = 1; i <= month; i++) {
+        result = result + result * laiSuat;
+    }
+    document.write(` Số tiền cần trả sau ${month} tháng với lãi suất ${laiSuat}% là: ${result}`);
+
+
+</script>
+</body>
+</html>
