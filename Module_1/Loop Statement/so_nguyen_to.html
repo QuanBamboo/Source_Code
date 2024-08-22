@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Nhập số lượng số nguyên tố num cần in ra. Giả sử num=3
+    let num = Number(prompt("Mời bạn nhập số nguyên: "));
+    while (isNaN(num) || num <= 1) {
+        num = Number(prompt("Số không hợp lệ, mời bạn nhập lại:  "));
+    }
+    //count: đếm số lượng số nguyên tố
+    let count = 0;
+    let N = 2;
+    let dem = 0;
+    //Kiểm tra để tìm ra num số nguyên tố.
+    while (count < num) {
+        //Kiểm tra số N có phải số nguyên tố không?
+        for (let i = 1; i <= N; i++) {
+            if (N % i === 0) {
+                dem++;
+            }
+        }
+        //Nếu N là số nguyên tố thì in ra và tăng count lên 1 đơn vị
+        if (dem === 2) {
+            document.write(`${N} <br>`);
+            count++;
+        }
+
+        //Tăng N thêm 1 đơn vị để kiểm tra có phải số nguyên tố không?
+        N++;
+        dem = 0;
+    }
+
+
+</script>
+</body>
+</html>
