@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -17,7 +17,7 @@
     }
 
     let n = Number(prompt(" Mời Sếp nhập số lượng sô Fibonacci muốn in: "));
-    while (isNaN(n) || number.isInteger(n) || n<0){
+    while (isNaN(n) || number.isInteger(n) || n < 0) {
         n = Number(prompt(" Sếp làm ơn nhập lại số lượng sô Fibonacci muốn in: "));
     }
     for (let i = 0; i < n; i++) {
@@ -40,7 +40,7 @@
     }
 
     //Bài 3:
-
+    //Bài 3.1:
     document.write("<table >");
 
     for (let i1 = 1; i1 <= 5; i1++) {
@@ -52,6 +52,8 @@
     }
     document.write("</table>");
 
+    //Bài  3.2
+
     document.write("<table>");
     for (let i2 = 1; i2 <= 5; i2++) {
         for (let j2 = 5; j2 >= i2; j2--) {
@@ -60,6 +62,36 @@
         document.write("</tr>");
     }
     document.write("</table>");
+
+
+    //Bài 3.3
+    for (let i1 = 1; i1 <= 5; i1++) {
+
+        for (let j1 = 1; j1 <= 5; j1++) {
+            if (i1 + j1 >= 6) {
+                document.write("*");
+            } else {
+                document.write("&nbsp;&nbsp;");
+            }
+
+        }
+        document.write("<br>");
+    }
+
+
+    //Bài 3.4
+    for (let i1 = 0; i1 <= 5; i1++) {
+
+        for (let j1 = 0; j1 <= 5; j1++) {
+            if (j1 - i1 >= 0) {
+                document.write("*");
+            } else {
+                document.write("&nbsp;&nbsp;");
+            }
+
+        }
+        document.write("<br>");
+    }
 
 
     //Bài 4:

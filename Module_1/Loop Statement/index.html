@@ -7,21 +7,48 @@
 <body>
 
 <script>
-    let fibo = function (n) {
-        if (n === 0 || n === 1) {
-            return 1;
-        } else {
-            return fibo(n - 1) + fibo(n - 2);
+
+
+    for (let i1 = 1; i1 <= 5; i1++) {
+
+        for (let j1 = 1; j1 <= 5; j1++) {
+            if (i1 + j1 >= 6) {
+                document.write("*");
+            } else {
+                document.write("&nbsp;&nbsp;");
+            }
+
         }
+        document.write("<br>");
     }
 
-    let n = Number(prompt(" Mời Sếp nhập số lượng sô Fibonacci muốn in: "));
-    while (isNaN(n) || number.isInteger(n) || n < 0) {
-        n = Number(prompt(" Sếp làm ơn nhp lại số lượng sô Fibonacci muốn in: "));
-    }
-    for (let i = 0; i < n; i++) {
-        let result = fibo(i);
-        document.write(` ${result} <br>`);
+    // document.write("<table >");
+    //
+    // for (let i1 = 1; i1 <= 5; i1++) {
+    //     document.write("<tr>");
+    //     for (let j1 = 1; j1 <=5; j1++) {
+    //         if(i1+j1>=6){
+    //             document.write("<td>*</td>");
+    //         }else {
+    //             document.write("<td></td>")
+    //         }
+    //
+    //     }
+    //     document.write("<tr>");
+    // }
+    // document.write("</table>");
+
+    for (let i1 = 0; i1 <= 5; i1++) {
+
+        for (let j1 = 0; j1 <= 5; j1++) {
+            if (j1 - i1 >= 0) {
+                document.write("*");
+            } else {
+                document.write("&nbsp;&nbsp;");
+            }
+
+        }
+        document.write("<br>");
     }
 
 
