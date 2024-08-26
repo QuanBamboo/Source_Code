@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let input = prompt("Mời bạn nhập: ");
+    let arr = [1, 4, 6, 7, 4, 8];
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] == input) {
+            document.write(` Vị trí thỏa mãn ${i} <br>`);
+            count++;
+        }
+
+    }
+    if ((count === 0)) {
+        document.write(` Không tìm thấy vị trí`);
+    }
+
+
+</script>
+</body>
+</html>
