@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Sameple Screen</h1>
+<label><input type="text" id="input"></label>
+<button type="button" onclick="add()">Add</button>
+<button type="button" onclick="display()">Display</button>
+<hr>
+<div id="result"></div>
+
+
+<script>
+    let arr = Array();
+    let index = 0;
+
+    function add() {
+        arr[index] = document.getElementById("input").value;
+        index++;
+        document.getElementById("input").value = "";
+    }
+
+    function display() {
+        let e='';
+        for (let i = 0; i < arr.length; i++) {
+            e += `Phần tử thứ ${i} là: ${arr[i]} <br>` ;
+        }
+        document.getElementById("result").innerHTML = e;
+    }
+
+
+</script>
+</body>
+</html>
