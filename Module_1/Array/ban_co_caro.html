@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Caro Game Simple</h1>
+<p id="display"></p>
+<button type="button" onclick="result()">Change Value</button>
+<br>
+
+<script>
+    let arr = [];
+    let data ="";
+    for (let i = 0; i < 5; i++) {
+        document.write("<br>");
+        for (let j = 0; j < 5; j++) {
+            document.write("O &nbsp;&nbsp; ");
+        }
+    }
+    for (let i = 0; i < 5; i++) {
+        data +="<br>";
+        for (let j = 0; j <5 ; j++) {
+            data+=arr[i][j] + "&nbsp;&nbsp;";
+        }
+
+    }
+    data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
+    b.innerHTML = data;
+    // document.getElementById("display").innerHTML = arr ;
+
+
+    function result() {
+        let row = +prompt("Nhập vị trí hàng:");
+        let col = +prompt("Nhập vị trí cột: ");
+        arr[row][col]="X";
+
+
+
+
+    }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    //Bài 1:
+    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] >= 10) {
+            console.log(arr[i]);
+            count++;
+        }
+    }
+    console.log(` Số lượng phần thử >=10 là: ${count}`);
+
+    //Bài 2:
+    let arr = [32, 434, 54, 34, 76, 34, 56, 34, 567, 34];
+    let max = arr[0];
+    let index = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+            index = i;
+        }
+    }
+    console.log(` Phần tử lớn nhất trong mảng là: ${max} và vị trí là ${index}`);
+
+    //Bài 3:
+    let arr = [2, 4, 6, 4, 6, 4, 3];
+
+    function avg(arr) {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        return sum / arr.length;
+    }
+
+    function max(arr) {
+        let max = arr[0];
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        return max;
+    }
+
+    console.log(` Giá trị lớn nhất trong mảng: ${max(arr)}`);
+    console.log(` Giá trị trung bình của mảng: ${avg(arr)}`);
+
+
+    //Bài 4:
+
+    let arr = [1, 2, 5, 7, 4, 7, 5]
+    console.log(` Mảng sau khi đảo ngược là: ${arr.reverse()}`);
+
+    // Bài 5:
+    let str = ("-5, 5,3,8,-7,-9,10");
+    let arr = str.split(",");
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < 0) {
+            count++;
+        }
+    }
+    document.write(` Số nguyên âm trong chuỗi là ${count}`);
+
+    //Bài 6:
+
+    let arr = [];
+    let count = 0;
+    for (let i = 0; i < 10; i++) {
+        arr[i] = Number(prompt(`Nhập phần tử thứ ${i + 1}: `));
+        while (!Number.isInteger(arr[i])) {
+            arr[i] = Number(prompt(`Nhập lại phần tử thứ ${i + 1}: `));
+        }
+    }
+
+    let V = Number(prompt("Nhập phần tử V: "));
+    while (!Number.isInteger(V)) {
+        V = Number(prompt("Nhập lại phần tử V: "));
+    }
+
+
+    for (let i = 0; i < arr.length; i++) {
+        if (V === arr[i]) {
+            console.log(` V is in the array`);
+            count++;
+            break;
+        }
+    }
+
+    if (count === 0) {
+        console.log(` V is not in the array`);
+    }
+
+    //Bài 7:
+
+    let arr = [];
+    for (let i = 0; i < 10; i++) {
+        arr[i] = Number(prompt(`Nhập phần tử thứ ${i}:`));
+        while (!Number.isInteger(arr[i])) {
+            arr[i] = Number(prompt(`Nhập lại phần tử thứ ${i}:`));
+        }
+    }
+
+    let V = Number(prompt("Nhập số nguyên V: "));
+    while (!Number.isInteger(V)) {
+        V = Number(prompt("Nhập số nguyên V: "));
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[[i]] === V) {
+            arr.splice(i, 1);
+        }
+    }
+
+    //Bài 8:
+    let arr = [];
+    for (let i = 0; i < 10; i++) {
+        arr[i] = Number(prompt(`Nhập phần tử thứ ${i}: `));
+        while (!Number.isInteger(arr[i])) {
+            arr[i] = Number(prompt(`Nhập lại phần tử thứ ${i}: `));
+        }
+    }
+
+    let arr1 = arr.sort((a, b) => b - a);
+    document.write(arr1);
+
+    //Bài 9:
+
+    let a = [], b = [], c = [];
+    for (let i = 0; i < 10; i++) {
+        a[i] = Number(prompt(`Nhập phần tử ${i}:`));
+        while (!Number.isInteger(a[i])) {
+            a[i] = Number(prompt(`Nhập lại phần tử ${i}:`));
+        }
+    }
+
+    for (let i = 0; i < 10; i++) {
+        b[i] = Number(prompt(`Nhập phần tử ${i}:`));
+        while (!Number.isInteger(b[i])) {
+            b[i] = Number(prompt(`Nhập lại phần tử ${i}:`));
+        }
+    }
+
+    c = a.concat(b);
+    document.write(c);
+
+</script>
+</body>
+</html>

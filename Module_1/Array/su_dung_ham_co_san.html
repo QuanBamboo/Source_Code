@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    //Bài 1:
+    let myColor = ["Red", "Green", "White", "Black"];
+    let newMyColor = myColor.join();
+    console.log(`"${newMyColor}"`);
+
+    //Bài 2:
+
+    let n = Number(prompt("Nhập chuỗi số: "));
+    let str = n.toString();
+    let arr = [str[0]];
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] % 2 === 0 && str[i+1] % 2 === 0) {
+            arr.push("-", str[i+1]);
+        } else {
+            arr.push(str[i+1]);
+        }
+    }
+    document.write(arr);
+
+
+</script>
+</body>
+</html>
