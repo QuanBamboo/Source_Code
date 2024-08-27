@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Bài 1:
+    let a = [
+        [1, 2, 1, 24],
+        [8, 11, 9, 4],
+        [7, 0, 7, 27],
+        [7, 4, 28, 14],
+        [3, 10, 26, 7]
+    ];
+
+    for (let i = 0; i < a.length; i++) {
+        document.write(` ====== row ${i} ====== <br>`)
+        for (let j = 0; j < 4; j++) {
+            document.write(`" ${a[i][j]} " <br>`);
+        }
+    }
+
+    // Bài 2:
+
+    let arr = ["c", "d", "x", "4", "f"];
+    let reversedArray = arr.reverse();
+    for (let i = 0; i < reversedArray.length; i++) {
+        document.write(reversedArray[i]);
+    }
+
+    //Bài 3:
+
+    let arr = [];
+    let len = Number(prompt("Nhập kích thước của mảng: "));
+    while (isNaN(len) || len < 0) {
+        len = Number(prompt("Nhập lại kích thước của mảng: "));
+    }
+    for (let i = 0; i < len; i++) {
+        arr[i] = prompt(` Nhập phần tử ${i + 1}:`);
+    }
+
+    //Cho từng phần tử của mảng nhân với 1 số:
+    //Nếu kết quả là 1 số thì phần tử đó là số.
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (!isNaN(arr[i] * 1)) {
+            count++;
+        }
+    }
+    if (count !== 0) {
+        document.write(` Có ${count} ký tự số trong mảng.`);
+
+    } else {
+        document.write(` Không có ký tự số trong mảng`)
+    }
+
+    //Bài 5:
+    let str1 = "";
+    let str2 = "";
+    let i = 0, j = 0;
+    let count = 0;
+    while (true) {
+        str1[i] = prompt(` Nhập phần tử ${i + 1} của chuỗi 1: `);
+        i++;
+        let result = prompt(` Nhấn phím bất kỳ để tiếp tục,nhấn "No" để dừng nhập:`)
+        if (result === "No") {
+            break;
+        }
+
+    }
+    while (true) {
+        str2[j] = prompt(` Nhập phần tử ${j + 1} của chuỗi 2: `);
+        j++;
+        let result = prompt(` Nhấn phím bất kỳ đế tiếp tục, "No" để dừng nhập:`)
+        if (result === "No") {
+            break;
+        }
+
+    }
+    if (str1.length !== str2.length) {
+        document.write(` Hai chuỗi không giống nhau`);
+    } else {
+        for (let k = 0; k < str1.length; k++) {
+            if (str1[k] !== str2[k]) {
+                document.write(` Hai chuỗi không giống nhau`);
+                break;
+            } else {
+                count++;
+            }
+        }
+    }
+    if (count === str1.length) {
+        document.write(` Hai chuỗi giống nhau`);
+    }
+
+    //Bài 6:
+    let arr = [];
+    let i = 0;
+    while (true) {
+        arr[i] = prompt(` Nhập phần tử ${i + 1}: `)
+        i++;
+        let check = prompt(` Nhấn phím bất kỳ để tiếp tục, nhấn "No" để dừng nhập: `)
+        if (check === "No") {
+            break;
+        }
+    }
+
+    for (let j = 0; j < arr.length; j++) {
+        if (arr[j] === "-") {
+            arr[j] = "_";
+        }
+    }
+
+
+</script>
+</body>
+</html>
