@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="text" id="input">
+<button type="button" onclick="ab()">Dịch</button>
+<p id="result"></p>
+
+
+<script>
+
+    function ab() {
+        const engLish = ["banana", "monkey", "dog", "cat"];
+        const tiengViet = ["chuối", "khỉ", "con chó", "con mèo"];
+        let string = document.getElementById("input").value;
+        let result = "";
+        let count = 0;
+        for (let i = 0; i < engLish.length; i++) {
+            if (string === engLish[i]) {
+                result = tiengViet[i];
+                count++;
+                break;
+            }
+
+        }
+        if (count !== 0) {
+            document.getElementById('result').innerHTML = result;
+        } else {
+            document.getElementById('result').innerHTML = "Không tìm thây" ;
+        }
+    }
+
+
+
+</script>
+</body>
+</html>
