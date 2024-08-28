@@ -6,29 +6,42 @@
 </head>
 <body>
 <script>
-    // Prompt the user for input and store it in the 'num' variable
-    const num = window.prompt();
 
-    // Convert the number to a string and store it in the 'str' variable
-    const str = num.toString();
+    //Bài 24:
+    let str = prompt("Nhập chuỗi: ");
+    let count1 = 0;
+    count2 = 0;
+    count3 = 0;
+    count4 = 0;
 
-    // Initialize an array 'result' with the first character of the string
-    const result = [str[0]];
-
-    // Iterate through the characters of the string starting from index 1
-    for (let x = 1; x < str.length; x++) {
-        // Check if the previous and current characters are both even digits
-        if (str[x - 1] % 2 === 0 && str[x] % 2 === 0) {
-            // If both are even, push a '-' and the current character to the 'result' array
-            result.push('-', str[x]);
-        } else {
-            // If not both even, push the current character to the 'result' array
-            result.push(str[x]);
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] >= "a" && str[i] <= "z") {
+            count1++;
+        } else if (str[i] >= "A" && str[i] <= "Z") {
+            count2++;
+        } else if (str[i] >= "0" && str[i] <= "9") {
+            count3++;
+        } else if (str[i] === " ") {
+            count4++;
         }
-    }
 
-    // Output the joined 'result' array as a string
-    console.log(result.join(''));
+    }
+    document.write(str + "<br>");
+    document.write(` Chuỗi nhập có ${count1} chữ thường, ${count2} chữ in hoa,
+                  ${count3} chữ số & ${count4} khoảng trắng
+                  `)
+
+
+
+
+
+
+
+
+
+
+
+
 </script>
 
 </body>

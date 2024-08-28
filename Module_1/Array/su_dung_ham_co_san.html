@@ -8,23 +8,40 @@
 <script>
 
     //Bài 1:
-    let myColor = ["Red", "Green", "White", "Black"];
-    let newMyColor = myColor.join();
-    console.log(`"${newMyColor}"`);
+    // let myColor = ["Red", "Green", "White", "Black"];
+    // let newMyColor = myColor.join();
+    // console.log(`"${newMyColor}"`);
+    //
+    // //Bài 2:
+    //
+    // let n = Number(prompt("Nhập chuỗi số: "));
+    // let str = n.toString();
+    // let arr = [str[0]];
+    // for (let i = 0; i < str.length; i++) {
+    //     if (str[i] % 2 === 0 && str[i+1] % 2 === 0) {
+    //         arr.push("-", str[i+1]);
+    //     } else {
+    //         arr.push(str[i+1]);
+    //     }
+    // }
+    // document.write(arr);
 
-    //Bài 2:
-
-    let n = Number(prompt("Nhập chuỗi số: "));
-    let str = n.toString();
-    let arr = [str[0]];
+    //Bài 3:
+    let str = prompt("Nhập chuỗi: ");
+    let arr = [];
+    console.log(` Chuỗi trước khi chuyển là: ${str}`);
     for (let i = 0; i < str.length; i++) {
-        if (str[i] % 2 === 0 && str[i+1] % 2 === 0) {
-            arr.push("-", str[i+1]);
+        // console.log(str[i]);
+        if (str[i] >= "a" && str[i] <= "z") {
+            arr[i] = str[i].toUpperCase();
+        } else if (str[i] >= "A" && str[i] <= "Z") {
+            arr[i] = str[i].toLowerCase();
         } else {
-            arr.push(str[i+1]);
+            arr[i] = str[i];
         }
+
     }
-    document.write(arr);
+    console.log(` Chuỗi sau khi chuyển là: ${arr}`);
 
 
 </script>
