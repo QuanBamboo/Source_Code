@@ -8,40 +8,25 @@
 
 <script>
 
-
-    for (let i1 = 1; i1 <= 5; i1++) {
-
-        for (let j1 = 1; j1 <= 5; j1++) {
-            if (i1 + j1 >= 6) {
-                document.write("*");
-            } else {
-                document.write("&nbsp;&nbsp;");
-            }
-
-        }
-        document.write("<br>");
-    }
-
-    // document.write("<table >");
-    //
-    // for (let i1 = 1; i1 <= 5; i1++) {
-    //     document.write("<tr>");
-    //     for (let j1 = 1; j1 <=5; j1++) {
-    //         if(i1+j1>=6){
-    //             document.write("<td>*</td>");
-    //         }else {
-    //             document.write("<td></td>")
-    //         }
-    //
-    //     }
-    //     document.write("<tr>");
+    // let a = 0;
+    // let b = 1;
+    // let c = 0;
+    // let count = 2;
+    // document.write(a +"<br>");
+    // document.write(b + "<br>");
+    // while (count < 20) {
+    //     c = a + b;
+    //     document.write(c + "<br>");
+    //     a = b;
+    //     b = c;
+    //     count++;
     // }
-    // document.write("</table>");
+
 
     for (let i1 = 0; i1 <= 5; i1++) {
 
         for (let j1 = 0; j1 <= 5; j1++) {
-            if (j1 - i1 >= 0) {
+            if (i1 + j1 >= 5) {
                 document.write("*");
             } else {
                 document.write("&nbsp;&nbsp;");

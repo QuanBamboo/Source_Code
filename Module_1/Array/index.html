@@ -6,60 +6,14 @@
 </head>
 <body>
 
-<label For="string">Nhập từ: </label>
-<input type="text" name="" id="string"/>
-<button onClick="transcript()">Dịch</button>
-<p id="result"></p>
 
 <script>
-
-    //Bài 24:
-    // let str = prompt("Nhập chuỗi: ");
-    // let count1 = 0;
-    // count2 = 0;
-    // count3 = 0;
-    // count4 = 0;
-    //
-    // for (let i = 0; i < str.length; i++) {
-    //     if (str[i] >= "a" && str[i] <= "z") {
-    //         count1++;
-    //     } else if (str[i] >= "A" && str[i] <= "Z") {
-    //         count2++;
-    //     } else if (str[i] >= "0" && str[i] <= "9") {
-    //         count3++;
-    //     } else if (str[i] === " ") {
-    //         count4++;
-    //     }
-    //
-    // }
-    // document.write(str + "<br>");
-    // document.write(` Chuỗi nhập có ${count1} chữ thường, ${count2} chữ in hoa,
-    //               ${count3} chữ số & ${count4} khoảng trắng
-    //               `)
-    //
-    //
-
-
-    function transcript() {
-        //orange
-        let arr_eng = ["banana", "apple", "orange", "pen", "pencil", "book"];
-        let arr_vie = ["chuối", "táo", "cam", "bút", "bút chì", "sách"];
-        let string = document.getElementById("string").value;
-        let index_eng = 0;
-        let result = "";
-        for (let i = 0; i < arr_eng.length; i++) {
-            if (string === arr_eng[i]) {
-                index_eng = i; //2
-                for (let j = 0; j < arr_vie.length; j++) {
-                    if (index_eng === j) { //2 == 2
-                        result = arr_vie[j]; // táo
-                    }
-                }
-            }
-        }
-        document.getElementById("result").innerHTML = result;
-    }
-
+    let str = "0,1";
+    let arr = [];
+    str[1] = "abc";
+    arr[1] = 32;
+    document.write(str + "<br>");
+    document.write(arr);
 
 </script>
 

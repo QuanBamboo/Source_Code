@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button type="button" onclick="alertMassage()">Mời click</button>
+<input type="number" id="input" oninput="alertNumber()">
+<script>
+
+    //Bài 1:
+    // function alertMassage(){
+    //     alert(" xin chào! ")
+    // }
+
+    //Bài 2:
+
+    // function alertNumber() {
+    //     let number = document.getElementById("input").value;
+    //     return alert(` ${++number}`);
+    // }
+
+    //Bài 3:
+
+    // function massage(a, b) {
+    //     if (a > b) {
+    //         return alert(` ${a} lớn hơn ${b}`);
+    //     } else {
+    //         return alert(` Tổng của 2 số ${a} và ${b} là ${a + b}`);
+    //     }
+    // }
+    // massage(5,6);
+    // massage(6,5);
+
+    //Bài 4:
+    // function addNumbers() {
+    //     firstNum = 4;
+    //     secondNum = 8;
+    //     result = firstNum + secondNum;
+    //     return result;
+    // }
+    //
+    // alert(result = 0);
+    // alert(result = addNumbers());
+
+    //Bài 5:
+
+    function checkStar(str) {
+        const NAME = ['Polaris', ' Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+        const STARS = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa', 'Major', 'Leo'];
+        let result = "";
+        for (let i = 0; i < NAME.length; i++) {
+            if (str === NAME[i]) {
+                result = STARS[i];
+                return alert(result);
+            } else {
+                return alert(" Không tìm thấy");
+            }
+        }
+
+    }
+
+    let input = prompt(" Mời nhập sao cần check: ");
+    checkStar(input);
+
+
+</script>
+</body>
+</html>
