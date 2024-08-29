@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    //Bài 1:
+    function binhPhuong(num) {
+        return num * num;
+    }
+
+    alert(binhPhuong(5));
+
+    //Bài 2:
+
+    function chuVi(r) {
+        return 2 * 3.14 * r;
+    }
+
+    function dienTich(r) {
+        return 3.14 * r * r;
+    }
+
+    document.write(` Chu vi của hình tròn có bán kính 5 là ${chuVi(5)} <br>`);
+    document.write(` Diện tich của hình tròn có bán kính 5 là ${dienTich(5)}`);
+
+    //Bài 3:
+    function giaiThua(number) {
+        let sum = 1;
+        for (let i = 1; i <= number; i++) {
+            sum *= i;
+        }
+        return sum;
+    }
+
+    alert(` Giai thừa của 4 bằng ${giaiThua(4)}`);
+
+    //Bài 4:
+
+    function checkNumber(str) {
+        if (!isNaN(str)) {
+            return alert(` ${str} là ký tự số`);
+        } else {
+            return alert(` ${str} không phải là ký tự số`);
+        }
+    }
+
+    let input = prompt("Nhập ký tự số cần check: ");
+    checkNumber(input);
+
+
+    //Bài 5:
+    function findMin(a, b, c) {
+        let min = a;
+        if (min > b) {
+            min = b;
+        } else {
+            min = c;
+        }
+        return min;
+    }
+
+    document.write(` Số bé nhất trong 3 số 4,7,2 là ${findMin(4, 7, 2)}`);
+
+    //Bài 6:
+
+    function checkInteger(a) {
+        if (Number.isInteger(a) && a > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    //Bài 7:
+
+    function doiCho(a, b) {
+        let temp = a;
+        a = b;
+        b = temp;
+        return [a, b];
+
+    }
+
+    alert(` 2 số 3,5 sau khi đổi chỗ là ${doiCho(3, 5)}`);
+
+    //Bài 8:
+    function reversedArray(arr) {
+        return arr.reverse();
+    }
+
+    let newArr = [1, 2, 3];
+    alert(reversedArray(newArr));
+
+    //Bài 9:
+
+    function checkIndex(arr, char) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === char) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    let arr1 = ['4', 'f', '4', 'y', 'k'];
+    alert(` số lần ký tự 4 xuất hiện là ${checkIndex(arr1, '4')}`);
+
+
+</script>
+</body>
+</html>
