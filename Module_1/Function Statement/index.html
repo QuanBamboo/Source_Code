@@ -5,12 +5,17 @@
     <title>Title</title>
 </head>
 <body>
+
 <script>
-    function square() {
-    alert("Hello");
+    function doiCho(a, b) {
+        let temp = a;
+        a = b;
+        b = temp;
+
 
     }
-    let a = square();
+
+    alert(` 2 số 3,5 sau khi đổi chỗ là ${doiCho(3, 5)}`);
 </script>
 
 </body>
