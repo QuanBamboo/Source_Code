@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let Circle = function (radius, color) {
+        this.radius = radius;
+        this.color = color;
+        this.getRadius = function () {
+            return this.radius;
+        }
+        this.getArea = function () {
+            return Math.PI * radius * radius;
+        }
+    }
+
+    let newCircle = new Circle(2);
+    console.log(` Bán kính là ${newCircle.getRadius()}`);
+    console.log(` Diện tích là: ${newCircle.getArea()}`);
+
+    let newCircle2 = new Circle(4);
+    console.log(` Bán kính là: ${newCircle2.getRadius()}`);
+    console.log(` Diện tích là: ${newCircle2.getArea()}`);
+
+    let newCircle3 = new Circle(5);
+    console.log(` Bán kính là: ${newCircle3.getRadius()}`);
+    console.log(` Diện tích là: ${newCircle3.getArea()}`);
+
+    let newCircle4 = new Circle(6);
+    console.log(` Bán kính l: ${newCircle4.getRadius()}`);
+    console.log(` Diện tích là: ${newCircle4.getArea()}`);
+
+
+</script>
+</body>
+</html>

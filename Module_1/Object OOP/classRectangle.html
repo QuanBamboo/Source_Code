@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanVas" width="600" height="400"></canvas>
+<script>
+    class Rectangle {
+        constructor(width, height) {
+            this.width = width;
+            this.height = height;
+        }
+
+        dienTich() {
+            return this.width * this.height;
+        }
+
+        chuvi() {
+            return (this.width + this.height) * 2;
+        }
+
+        draw() {
+            let canvas = document.getElementById("myCanVas");
+            let ctx = canvas.getContext('2d');
+            ctx.fillStyle = 'red';
+            ctx.fillRect(10, 10, this.width, this.height);
+        }
+    }
+
+    const rectangle = new Rectangle(100, 50);
+    console.log(` Chu vi hình chữ nhật là ${rectangle.chuvi()}`);
+    console.log(` Diện tích hình chữ nhật là ${rectangle.dienTich()}`);
+
+    rectangle.draw();
+
+
+</script>
+</body>
+</html>
