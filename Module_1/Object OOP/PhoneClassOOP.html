@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Mobile {
+        // khai bao thuoc tinh
+        pin;
+        message;
+        inbox;
+        outbox;
+        status;
+
+        constructor() {
+            this.pin = 100;
+            this.message = "";
+            this.inbox = [];
+            this.outbox = [];
+            this.status = false;
+        }
+
+        checkStatus() {
+            this.pin -= 1;
+            if (this.status) {
+                return "Dien thoai dang bat";
+            }
+            return "Dien thoai dang tat";
+        }
+
+        turnOn() {
+            this.pin -= 1;
+            this.status = true;
+        }
+
+        turnOff() {
+            this.pin -= 1;
+            this.status = false;
+        }
+
+        chargePin() {
+            this.pin += 1;
+        }
+
+        writeMessage(txt) {
+            this.pin -= 1;
+            this.message += txt;
+        }
+
+        sendMessage(phone) {
+            phone.inbox.push(this.message);
+            this.outbox.push(this.message);
+        }
+    }
+
+    const m1 = new Mobile();
+
+    m1.turnOn();
+
+    document.write(m1.checkStatus())
+
+    m1.turnOff();
+    document.write("<br>")
+
+    document.write(m1.checkStatus())
+    document.write("<br>")
+    document.write(m1.pin)
+    m1.chargePin();
+    document.write("<br>")
+    document.write(m1.pin)
+
+    m1.writeMessage("Tin nhat gui di");
+
+    const m2 = new Mobile();
+
+    m2.turnOn();
+
+    m1.sendMessage(m2);
+
+</script>
+</body>
+</html>

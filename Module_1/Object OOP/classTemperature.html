@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    class Temperature {
+        constructor(celsius) {
+            this.celsius = celsius;
+        }
+
+        changeF() {
+            if (this.celsius < -273) {
+                alert("Nhiệt độ không phù hợp");
+            } else {
+                return (this.celsius * 1.8 + 32);
+            }
+
+        }
+
+        changeK() {
+            if (this.celsius < -273) {
+                alert("Nhiệt độ không phù hợp");
+            } else {
+                return this.celsius + 273.15;
+            }
+
+        }
+    }
+
+    const temperature = new Temperature();
+    temperature.celsius = 25;
+    console.log(` Nhiệt độ F: ${temperature.changeF()}`);
+    console.log(` Nhiệu độ K: ${temperature.changeK()}`);
+</script>
+</body>
+</html>

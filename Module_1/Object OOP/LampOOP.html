@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Lamp  {
+        constructor() {
+            this.lampStatus = false;
+        }
+        turnOn(){
+            this.lampStatus = true;
+        }
+        turnOff(){
+            this.lampStatus =false;
+        }
+    }
+    class Switch{
+        constructor() {
+            this.switchStatus =false;
+            this.electricLamp = null;
+        }
+
+        // tham chiếu ( tham số là một kiểu đối tượng)
+        connectLamp(bongDen){
+            this.electricLamp = bongDen;
+        }
+        switchOff(){
+            this.switchStatus = false;
+            this.electricLamp.turnOff()
+        }
+        switchOn(){
+            this.switchStatus = true;
+            this.electricLamp.turnOn();
+        }
+
+    }
+
+    let den = new Lamp();
+    let congTac = new Switch();
+    congTac.connectLamp(den);
+
+    console.log("bất công tắc");
+    congTac.switchOn();
+    console.log("công tắc " + congTac.switchStatus);
+    console.log("bóng đèn " + den.lampStatus);
+
+    console.log("tắt công tắc");
+    congTac.switchOff();
+    console.log("công tắc " + congTac.switchStatus);
+    console.log("bóng đèn " + den.lampStatus);
+
+
+</script>
+</body>
+</html>
