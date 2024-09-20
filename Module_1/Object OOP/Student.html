@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student</title>
+    <style>
+
+        #ID, #name, #description, #hometown, #date {
+            border: 1px solid black;
+            padding: 8px;
+            display: inline-block;
+            border-radius: 4px;
+        }
+
+        #input {
+            border: 1px solid black;
+            padding: 20px;
+            display: inline-block;
+            border-radius: 4px;
+            background-color: lightgrey;
+        }
+
+        .button {
+            background-color: limegreen;
+            color: white;
+            border: 1px solid black;
+            width: 60px;
+            height: 40px;
+            border-radius: 4px;
+            margin: 5px;
+        }
+
+        table, th, td {
+            border: 1px solid black; /* Đường viền dày 1px, màu đen */
+            border-collapse: collapse; /* Kết hợp các đường viền lại với nhau */
+            width: 1250px;
+            text-align: center;
+        }
+
+        th {
+            background-color: red;
+            font-size: 20px
+        }
+
+        td {
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+<div id="input"><label for="ID">ID<input type="number" placeholder="Input ID" id="ID"></label>
+    <label for="name">Name<input type="text" placeholder="Input Name" id="name"></label>
+    <label for="hometown">Hometown<input type="text" placeholder="Input Hometown" id="hometown"></label>
+    <label for="date">Date of Birth<input type="date" placeholder="Input Date of Birth" id="date"></label>
+    <label for="description">Description<input type="text" placeholder="Input Description" id="description"></label>
+    <button class="button" onclick="addNewStudent()">Add</button>
+</div>
+
+<p id="display"></p>
+<script>
+
+
+    class Student {
+        constructor(ID, name, hometown, dateOfBirth, description) {
+            this.ID = ID;
+            this.name = name;
+            this.hometown = hometown;
+            this.dateOfBirth = dateOfBirth;
+            this.description = description;
+        }
+    }
+
+    let students = [];
+    students.push(new Student(1, "name1", "hometown1", "dateOfBirth1", "description1"));
+    students.push(new Student(2, "name2", "hometown2", "dateOfBirth2", "description2"));
+    students.push(new Student(3, "name3", "hometown3", "dateOfBirth3", "description3"));
+    students.push(new Student(4, "name4", "hometown4", "dateOfBirth4", "description4"));
+    students.push(new Student(5, "name5", "hometown5", "dateOfBirth5", "description5"));
+
+    function displayStudent() {
+        let temp = "<table class='table'>";
+        temp += "<tr>";
+        temp += "<th>ID</th>";
+        temp += "<th>Name</th>";
+        temp += "<th>Hometown</th>";
+        temp += "<th>Date of Birth</th>";
+        temp += "<th>Description</th>";
+        temp += "<th></th>";
+        temp += "<th></th>";
+        temp += "</tr>";
+
+        for (let i = 0; i < students.length; i++) {
+            temp += "<tr>";
+            temp += `<td>${students[i].ID}</td>`;
+            temp += `<td>${students[i].name}</td>`;
+            temp += `<td>${students[i].hometown}</td>`;
+            temp += `<td>${students[i].dateOfBirth}</td>`;
+            temp += `<td>${students[i].description}</td>`;
+            temp += `<td><button class="button" onclick="removeStudent(${i})">Delete</button></td>`
+            temp += `<td><button class="button" onclick="editStudent(${i})">Edit</button></td>`
+            temp += "</tr>";
+        }
+        temp += "</table>";
+        document.getElementById("display").innerHTML = temp;
+    }
+
+
+    function addNewStudent() {
+
+        let ID = document.getElementById("ID").value;
+        let name = document.getElementById("name").value;
+        let hometown = document.getElementById("hometown").value;
+        let date = document.getElementById("date").value;
+        let description = document.getElementById("description").value;
+        students.push(new Student(ID, name, hometown, date, description));
+        displayStudent();
+    }
+
+    function removeStudent(i) {
+        let isDelete = confirm(` Bạn có muốn xóa học sinh có tên ${students[i].name} không?`);
+        if (isDelete) {
+            students.splice(i, 1);
+            alert("xóa thành công");
+        }
+        displayStudent();
+    }
+
+    function editStudent(i) {
+        let input = +prompt(` Bạn muốn thay đổi thông tin gì? Chọn số
+                            1. ID
+                            2. Name
+                            3. Hometown
+                            4. Date of Birth
+                            5. Description`);
+        if (input === 1) {
+            students[i].ID = prompt(` Nhập thông tin mới: `);
+            alert(`Thay đổi thành công!`);
+        } else if (input === 2) {
+            students[i].name = prompt(` Nhập thông tin mới: `);
+            alert(`Thay đổi thành công!`);
+        } else if (input === 3) {
+            students[i].hometown = prompt(` Nhập thông tin mới: `);
+            alert(`Thay đổi thành công!`);
+        } else if (input === 4) {
+            students[i].dateOfBirth = prompt(` Nhập thông tin mới: `);
+            alert(`Thay đổi thành công!`);
+        } else if (input === 5) {
+            students[i].description = prompt(` Nhập thông tin mới:`)
+            alert(`Thay đổi thành công!`);
+        }else {
+            alert("Không có thay đổi gì!")
+        }
+
+
+
+
+        displayStudent();
+    }
+
+
+    displayStudent();
+
+</script>
+</body>
+</html>

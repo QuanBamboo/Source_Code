@@ -5,13 +5,86 @@
     <title>Title</title>
 </head>
 <body>
-<script>
 
-    function tutorial(NULL){
-        document.write("Ready");
+    <label htmlFor="code">ID</label>
+    <input id="code"/>
+    <label htmlFor="name">Name</label>
+    <input id="name"/>
+    <label htmlFor="dob">DOB</label>
+    <input id="dob" type="date"/>
+    <label htmlFor="des">Description</label>
+    <input id="des"/>
+    <button onClick="addNewStudent()">Thêm mới</button>
+    <p id="view"></p>
+    <script>
+        // Quản lý thông tin của học sinh/ điện thoại/ nhân viên:
+        // Mã
+        // Tên
+        // Giá, Ngày tháng năm sinh/ mô tả ,,,,
+        // Hiển thị giao diện như mô tả bên dưới (table)
+        // Thêm mới 1 sản phẩm
+        // Ngoài ra: xóa, tìm kiếm, sắp xếp
+        class Student {
+        code;
+        name;
+        dob;
+        description;
+        constructor(code, name, dob, description) {
+        this.code = code;
+        this.name = name;
+        this.dob = dob;
+        this.description = description
+    }
     }
 
-    tutorial();
+        let students = [];
+        students.push(new Student(1, "haiTT", "1111", "Trainer"))
+        students.push(new Student(2, "abc", "1111", "Học sinh"))
+
+        function displayStudent() {
+        students.sort(function (a, b) {
+            return a.name.localeCompare(b.name)
+        })
+        let temp = "<table style='width: 500px;' border='1'>";
+        temp += "<tr>"
+        temp += "<th>ID</th>"
+        temp += "<th>Name</th>"
+        temp += "<th>Date of birth</th>"
+        temp += "<th>Description</th>"
+        temp += "</tr>"
+        for(let i = 0 ; i <students.length; i++) {
+        temp += "<tr>"
+        temp += `<td>${students[i].code}</td>`
+        temp += `<td>${students[i].name}</td>`
+        temp += `<td>${students[i].dob}</td>`
+        temp += `<td>${students[i].description}</td>`
+        temp += `<td><button onclick="removeStudent(${i})">Xóa</button></td>`
+        temp += "</tr>"
+    }
+        temp += "</table>"
+        document.getElementById("view").innerHTML = temp;
+    }
+
+        function removeStudent(i) {
+        let isDelete = confirm(`Bạn có muốn xóa học sinh tên là ${students[i].name} không?`)
+        if(isDelete) {
+        students.splice(i, 1);
+        alert("Xóa thành công")
+        displayStudent()
+    }
+
+    }
+
+        function addNewStudent() {
+        let code = document.getElementById("code").value;
+        let name = document.getElementById("name").value;
+        let dob = document.getElementById("dob").value;
+        let des = document.getElementById("des").value;
+        students.push(new Student(code, name, dob, des))
+        displayStudent()
+    }
+        displayStudent();
 </script>
+
 </body>
 </html>
