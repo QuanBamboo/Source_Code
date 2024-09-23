@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý công nhân</title>
+    <style>
+        table, th, td {
+            border: 1px solid black; /* Đường viền dày 1px, màu đen */
+            border-collapse: collapse; /* Kết hợp các đường viền lại với nhau */
+            width: 1000px;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        th {
+            background-color: gray;
+        }
+
+        tr:nth-child(odd) {
+            background-color: darkgrey;
+        }
+
+        tr:nth-child(even) {
+            background-color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+<h1>Quản lý công nhân</h1>
+<p id="display"></p>
+<script>
+
+    class Worker {
+        constructor(order, name, date, address, salary, position) {
+            this.order = order;
+            this.name = name;
+            this.date = date;
+            this.address = address;
+            this.salary = salary;
+            this.position = position;
+        }
+    }
+
+    const wokers = [];
+    wokers.push(new Worker(1, "Trương Tấn A", "11-11-1997", "Quảng Nam", 2000, "Abc"));
+    wokers.push(new Worker(2, "Trương Tấn B", "11-11-1998", "Đà Nẵng", 2000, "Abc"));
+    wokers.push(new Worker(3, "Trương Tấn C", "11-11-1999", "Huế", 2000, "Abc"));
+
+    function displayWorker() {
+        wokers.sort(function (a, b) {
+            return a.name.localeCompare(b.name);
+        })
+        let temp = "<table>";
+        temp += "<tr>";
+        temp += "<th>STT</th>";
+        temp += "<th>Họ và Tên</th>";
+        temp += "<th>Ngày sinh</th>";
+        temp += "<th>Địa chỉ</th>";
+        temp += "<th>Lương</th>";
+        temp += "<th>Chức vụ</th>";
+        temp += "</tr>";
+        for (let i = 0; i < wokers.length; i++) {
+            temp += "<tr>";
+            temp += `<td>${wokers[i].order}</td>`;
+            temp += `<td>${wokers[i].name}</td>`;
+            temp += `<td>${wokers[i].date}</td>`;
+            temp += `<td>${wokers[i].address}</td>`;
+            temp += `<td>${wokers[i].salary}</td>`;
+            temp += `<td>${wokers[i].position}</td>`;
+            temp += "</tr>";
+        }
+        temp += "<table>";
+        document.getElementById("display").innerHTML = temp;
+    }
+
+    displayWorker();
+
+
+</script>
+</body>
+</html>

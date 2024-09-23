@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Nhập tháng & kiểm tra điều kiện nhập:
+    let month = Number(prompt(` Mời bạn nhập tháng: `));
+    while (isNaN(month) || !Number.isInteger(month) || month < 1 || month > 12) {
+        month = Number(prompt(` Mời bạn nhập lại tháng hợp lệ: `));
+    }
+
+    //Nhập năm & kiểm tra điều kiện nhập:
+    let year = Number(prompt(` Mời bạn nhập năm: `));
+    while (isNaN(year) || !Number.isInteger(year) || year <= 0) {
+        year = Number(prompt(` Mời bạn nhập lại năm hợp lệ: `));
+    }
+
+    //Hàm kiểm tra năm nhuận:
+    function checkNamNhuan(year) {
+        if (year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //Hiển thị kết quả:
+    switch (month) {
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            document.write(` ${month}/${year} có 31 ngày`);
+            break;
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            document.write(` ${month}/${year} có 30 ngày`);
+            break;
+        case 2:
+            if (checkNamNhuan(year)) {
+                document.write(` ${month}/${year} có 29 ngày`);
+            } else {
+                document.write(` ${month}/${year} có 28 ngày`);
+            }
+
+    }
+
+
+</script>
+</body>
+</html>

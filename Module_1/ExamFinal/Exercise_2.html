@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Hàm kiểm tra số hoàn hảo:
+    function perfectNumber(num) {
+        let sum = 0;
+        for (let i = 1; i < num; i++) {
+            if (num % i === 0) {
+                sum += i;
+            }
+        }
+
+        if (sum === num) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    //Nhập số từ bàn phím:
+    let number = Number(prompt(` Mời bạn nhập số nguyên dương cần kiểm tra:`));
+    while (isNaN(number) || !Number.isInteger(number) || number <= 0) {
+        number = Number(prompt(` Mời bạn nhập lại số nguyên dương hợp lệ: `))
+    }
+
+    //Hiển thị kết quả:
+    if (perfectNumber(number)) {
+        document.write(` Số ${number} là số hoàn hảo`);
+    } else {
+        document.write(` Số ${number} không phải là số hoàn hảo`);
+    }
+
+
+</script>
+</body>
+</html>

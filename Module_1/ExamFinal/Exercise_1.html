@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Excercise_1</title>
+</head>
+<body>
+<script>
+
+    let arr = [];
+
+    //Khai báo số lượng phần tử cho mảng:
+    let n = Number(prompt(` Mời bạn nhập số lượng phần tử trong mảng: `));
+    while (isNaN(n) || !Number.isInteger(n) || n <= 0 || n > 50) {
+        n = Number(prompt(` Mời bạn nhập lại số lượng phần tử trong mảng hợp lệ: `));
+    }
+
+
+    //Thêm phần tử vào mảng:
+    for (let i = 0; i < n; i++) {
+        let input = Number(prompt(` Mời bạn nhập phần tử thứ ${i + 1} của mảng: `));
+        while (isNaN(input) || !(Number.isInteger(input))) {
+            input = Number(prompt(` Mời bạn nhập lại phần tử thứ ${i + 1} của mảng hợp lệ: `));
+        }
+        arr.push(input);
+
+    }
+
+    //Hiển thị mảng:
+    document.write(arr);
+    document.write("<br>");
+
+    let sum = 0;
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 3 === 0) {
+            sum += arr[i];
+            count++;
+        }
+    }
+
+    //Hiển thị trung bình cộng các số trong mảng chia hết cho 3:
+    if (count === 0) {
+        document.write(` Mảng đã nhập không có số chia hết cho 3`);
+    } else {
+        avg = sum / count;
+        document.write(` Trung bình cộng các số chia hết cho 3 của mảng là: ${avg}`);
+    }
+
+
+</script>
+</body>
+</html>
