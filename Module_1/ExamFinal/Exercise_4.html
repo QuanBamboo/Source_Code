@@ -9,6 +9,7 @@
             border-collapse: collapse; /* Kết hợp các đường viền lại với nhau */
             width: 1000px;
             text-align: center;
+            margin: auto;
         }
 
         h1 {
@@ -72,7 +73,7 @@
             temp += `<td>${wokers[i].position}</td>`;
             temp += "</tr>";
         }
-        temp += "<table>";
+        temp += "</table>";
         document.getElementById("display").innerHTML = temp;
     }
 
