@@ -53,14 +53,29 @@ public class PrintGeometry {
                         }
                         break;
                     case 3:
-
+                        System.out.println("Nhập chiều cao tam giác: ");
+                        int h = sc.nextInt();
+                        int k = 0;
+                        for (int i = 1; i <= h; i++, k = 0) {
+                            for (int j = 1; j <= h - i; j++) {
+                                System.out.print("  ");
+                            }
+                            while (k != 2 * i - 1) {
+                                System.out.print("* ");
+                                ++k;
+                            }
+                            System.out.println();
+                        }
                         break;
 
                 }
 
+
             }
+
         }
-
-
     }
+
+
 }
+
