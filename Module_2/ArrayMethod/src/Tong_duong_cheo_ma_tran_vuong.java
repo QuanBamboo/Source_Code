@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Tong_duong_cheo_ma_tran_vuong {
@@ -22,6 +23,7 @@ public class Tong_duong_cheo_ma_tran_vuong {
             }
             System.out.println("");
         }
+
 
         int sum = 0;
         //tính tổng
