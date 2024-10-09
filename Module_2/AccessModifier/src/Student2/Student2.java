@@ -4,6 +4,8 @@ public class Student2 {
     private String name = "John";
     private String classess = "C02";
 
+
+
     public Student2() {
     }
 

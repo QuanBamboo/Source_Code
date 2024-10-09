@@ -5,5 +5,7 @@ public class Test {
         Student2 student2 = new Student2();
         student2.setClassess("C03");
         student2.setName("Doe");
+
+        
     }
 }
