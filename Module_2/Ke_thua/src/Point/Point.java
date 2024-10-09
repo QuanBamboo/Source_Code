@@ -1,15 +1,16 @@
 package Point;
 
-public class Point2D {
+public class Point {
+
     private float x;
     private float y;
 
-    public Point2D() {
+    public Point() {
     }
 
-    public Point2D(float y, float x) {
-        this.y = y;
+    public Point(float x, float y) {
         this.x = x;
+        this.y = y;
     }
 
     public float getX() {
@@ -34,17 +35,11 @@ public class Point2D {
     }
 
     public float[] getXY() {
-        float[] array = new float[2];
-        array[0] = x;
-        array[1] = y;
-        return array;
+        return new float[]{x, y};
     }
 
     @Override
     public String toString() {
-        return "Point2D{" +
-                "x=" + x +
-                ", y=" + y +
-                '}';
+        return "(" + x + ", " + y + ")";
     }
 }

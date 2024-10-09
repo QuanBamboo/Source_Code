@@ -1,4 +1,4 @@
-package Point;
+package Point2D3D;
 
 public class Point3D extends Point2D {
     private float z;
