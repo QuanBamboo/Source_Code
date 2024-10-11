@@ -9,5 +9,6 @@ public class Test {
 
         System.out.println("MovablePoint :" + p2.toString());
 
+
     }
 }
