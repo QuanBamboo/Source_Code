@@ -5,6 +5,7 @@ public class Shape {
     private boolean filled = true;
 
     public Shape() {
+
     }
 
     public Shape(String color, boolean filled) {
