@@ -29,8 +29,8 @@ public class Teacher extends Person implements Serializable, Comparable<Teacher>
 
     @Override
     public String toString() {
-        return super.toString() + "Teacher{" +
-                "subject='" + subject + '\'' +
+        return "Teacher{" + "ID= " + getiD() + ", name= " + getName() + ", address = " + getAddress() +
+                ", subject='" + subject + '\'' +
                 "} " + super.toString();
     }
 

@@ -14,12 +14,12 @@ public class TeacherView {
         TeacherService teacherService = new TeacherService();
         int id;
         while (true) {
-            System.out.println("Menu quản lý giảng viên");
+            System.out.println("******* Menu quản lý giảng viên *******");
             System.out.println("1. Hiển thị danh sách giảng viên");
             System.out.println("2. Thêm mới giảng viên");
             System.out.println("3. Sửa thông tin giảng viên");
             System.out.println("4. Xóa giảng viên");
-            System.out.println("5. Tìm kiếm giảng viêntheo tên");
+            System.out.println("5. Tìm kiếm giảng viên theo tên");
             System.out.println("6. Quay lại");
             System.out.print("Nhập lựa chọn: ");
             Scanner scanner = new Scanner(System.in);
@@ -30,7 +30,7 @@ public class TeacherView {
                     display(teachers);
                     break;
                 case 2:
-                    teacher = inputTeacher();
+                    teacher = teacherService.inputTeacher();
                     teacherService.save(teacher);
                     System.out.println("Thêm mới thành công");
                     break;
@@ -40,7 +40,7 @@ public class TeacherView {
                     if (!teacherService.isExistsTeachers(id)) {
                         System.out.println("Id vừa nhập không tồn tại trong danh sách");
                     } else {
-                        Teacher t = inputTeacher();
+                        Teacher t = teacherService.inputTeacher();
                         teacherService.remove(id);
                         teacherService.save(t);
                         System.out.println("Sửa thông tin thành công!");
@@ -77,27 +77,6 @@ public class TeacherView {
 
     }
 
-    public static Teacher inputTeacher() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Mời bạn nhập ID: ");
-
-        int id = Integer.parseInt(scanner.nextLine());
-        System.out.print("Mời bạn nhập tên: ");
-        String name = scanner.nextLine();
-
-        while (!name.matches("^[A-Z][a-z ]{5,100}$")) {
-            System.out.println("Bạn nhập sai định dạng tên");
-            System.out.print("Mời bạn nhập lại: ");
-            name = scanner.nextLine();
-        }
-
-        System.out.print("Mời bạn nhập địa chỉ: ");
-        String address = scanner.nextLine();
-
-        System.out.print("Mời bạn nhập môn dạy: ");
-        String subject = scanner.nextLine();
-        return new Teacher(id, name, address, subject);
-    }
 
     public void display(List<Teacher> teachers) {
         System.out.println("Hiển thị danh giảng viên");
@@ -105,6 +84,7 @@ public class TeacherView {
             System.out.println(teacher);
         }
     }
+
 
     public int inputChoice() {
         Scanner scanner = new Scanner(System.in);

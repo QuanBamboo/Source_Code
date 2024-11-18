@@ -34,10 +34,10 @@ public class Student extends Person implements Comparable<Student>, Serializable
 
     @Override
     public String toString() {
-        return super.toString() + "Student{" +
-                "point=" + point +
+        return "Student{" + "ID= " + getiD() + ",name= " + getName() + ",address = " + getAddress() +
+                ", point=" + point +
                 ", className='" + className + '\'' +
-                '}';
+                "} ";
     }
 
     @Override

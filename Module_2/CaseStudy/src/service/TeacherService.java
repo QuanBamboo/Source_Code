@@ -1,25 +1,28 @@
 package service;
 
 
+import entity.Student;
 import entity.Teacher;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class TeacherService implements ITeacher {
-    public static final String SRC_TEACHER = "src/CaseStudy/data/teacher.dat";
+    public static final String SRC_TEACHER = "src/data/teacher.txt";
 
     @Override
     public List<Teacher> getAll() {
         List<Teacher> teachers = new ArrayList<>();
-        File file = new File(SRC_TEACHER);
+
 
         try {
-            FileInputStream fileInputStream = new FileInputStream(file);
+            FileInputStream fileInputStream = new FileInputStream(SRC_TEACHER);
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
             teachers = (List<Teacher>) objectInputStream.readObject();
             objectInputStream.close();
+            fileInputStream.close();
         } catch (FileNotFoundException e) {
             System.out.println("Lỗi không tìm thấy file");
         } catch (IOException e) {
@@ -30,11 +33,47 @@ public class TeacherService implements ITeacher {
         return teachers;
     }
 
+    public Teacher inputTeacher() {
+        Scanner scanner = new Scanner(System.in);
+        int id;
+
+        while (true) {
+            System.out.print("Mời bạn nhập ID: ");
+            try {
+                id = Integer.parseInt(scanner.nextLine());
+                if (isExistsTeachers(id)) {
+                    System.out.println("ID đã tồn tại, mời nhập lại");
+                } else
+                    break;
+            } catch (NumberFormatException e) {
+                System.out.println("Vui lòng nhập đúng định dạng số");
+            }
+
+        }
+
+        System.out.print("Mời bạn nhập tên: ");
+        String name = scanner.nextLine();
+
+        while (!name.matches("^[A-Z][a-z ]{5,100}$")) {
+            System.out.println("Bạn nhập sai định dạng tên");
+            System.out.print("Mời bạn nhập lại: ");
+            name = scanner.nextLine();
+        }
+
+        System.out.print("Mời bạn nhập địa chỉ: ");
+        String address = scanner.nextLine();
+
+        System.out.print("Mời bạn nhập môn dạy: ");
+        String subject = scanner.nextLine();
+        return new Teacher(id, name, address, subject);
+    }
+
     @Override
     public void save(Teacher t) {
         List<Teacher> teachers = getAll();
         teachers.add(t);
-        writeFileBinary(teachers);
+        writeDataToFile(teachers);
+
     }
 
     @Override
@@ -46,7 +85,7 @@ public class TeacherService implements ITeacher {
                 break;
             }
         }
-        writeFileBinary(teachers);
+        writeDataToFile(teachers);
     }
 
 
@@ -59,7 +98,7 @@ public class TeacherService implements ITeacher {
                 break;
             }
         }
-        writeFileBinary(teachers);
+        writeDataToFile(teachers);
     }
 
     @Override
@@ -85,14 +124,14 @@ public class TeacherService implements ITeacher {
         return temp;
     }
 
-    public void writeFileBinary(List<Teacher> teachers) {
-        File file = new File(SRC_TEACHER);
-        OutputStream outputStream = null;
+    public void writeDataToFile(List<Teacher> teachers) {
+
         try {
-            outputStream = new FileOutputStream(file);
-            ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
+            FileOutputStream fileOutputStream = new FileOutputStream(SRC_TEACHER);
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
             objectOutputStream.writeObject(teachers);
             objectOutputStream.close();
+            fileOutputStream.close();
         } catch (FileNotFoundException e) {
             System.out.println("Lỗi không tìm thấy file");
         } catch (IOException e) {

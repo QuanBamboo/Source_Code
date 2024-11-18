@@ -5,22 +5,22 @@ import entity.Student;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class StudentService implements IStudent {
-    public static final String SRC_STUDENT = "src/CaseStudy/data/student.dat";
+    public static final String SRC_STUDENT = "src/data/student.txt";
 
 
     //Hiển thị danh sách
     @Override
     public List<Student> getAll() {
         List<Student> students = new ArrayList<>();
-        File file = new File(SRC_STUDENT);
-
         try {
-            FileInputStream fileInputStream = new FileInputStream(file);
+            FileInputStream fileInputStream = new FileInputStream(SRC_STUDENT);
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
             students = (List<Student>) objectInputStream.readObject();
             objectInputStream.close();
+            fileInputStream.close();
         } catch (FileNotFoundException e) {
             System.out.println("Lỗi không tìm thấy file");
         } catch (IOException e) {
@@ -37,7 +37,8 @@ public class StudentService implements IStudent {
     public void save(Student s) {
         List<Student> students = getAll();
         students.add(s);
-        writeFileBinary(students);
+        writeDataToFile(students);
+
     }
 
 
@@ -51,7 +52,7 @@ public class StudentService implements IStudent {
                 break;
             }
         }
-        writeFileBinary(students);
+        writeDataToFile(students);
     }
 
     //Xóa
@@ -65,7 +66,53 @@ public class StudentService implements IStudent {
                 break;
             }
         }
-        writeFileBinary(students);
+        writeDataToFile(students);
+    }
+
+    public Student inputStudent() {
+        Scanner scanner = new Scanner(System.in);
+        int id;
+        double point;
+        while (true) {
+            System.out.print("Mời bạn nhập ID: ");
+            try {
+                id = Integer.parseInt(scanner.nextLine());
+                if (isExistsStudent(id)) {
+                    System.out.println("ID đã tồn tại, mời nhập lại");
+                } else
+                    break;
+            } catch (NumberFormatException e) {
+                System.out.println("Vui lòng nhập định dạng số");
+            }
+        }
+
+        System.out.print("Mời bạn nhập tên: ");
+        String name = scanner.nextLine();
+
+        while (!name.matches("^[A-Z][a-z ]{5,100}$")) {
+            System.out.println("Bạn nhập sai định dạng tên");
+            System.out.print("Mời bạn nhập lại: ");
+            name = scanner.nextLine();
+        }
+
+
+        System.out.print("Mời bạn nhập địa chỉ: ");
+        String address = scanner.nextLine();
+
+        while (true) {
+            System.out.print("Mời bạn nhập điểm: ");
+            try {
+                point = Double.parseDouble(scanner.nextLine());
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Vui lòng nhập đúng định dạng số thực");
+            }
+        }
+
+
+        System.out.print("Mời bạn nhập lớp: ");
+        String className = scanner.nextLine();
+        return new Student(id, name, address, point, className);
     }
 
     //Tìm kiếm theo ID
@@ -96,14 +143,14 @@ public class StudentService implements IStudent {
 
 
     //Viết vào file
-    public void writeFileBinary(List<Student> students) {
-        File file = new File(SRC_STUDENT);
-        OutputStream outputStream = null;
+    public void writeDataToFile(List<Student> students) {
+
         try {
-            outputStream = new FileOutputStream(file);
-            ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
+            FileOutputStream fileOutputStream = new FileOutputStream(SRC_STUDENT);
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
             objectOutputStream.writeObject(students);
             objectOutputStream.close();
+            fileOutputStream.close();
         } catch (FileNotFoundException e) {
             System.out.println("Lỗi không tìm thấy file");
         } catch (IOException e) {
