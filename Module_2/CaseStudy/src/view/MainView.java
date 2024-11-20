@@ -7,7 +7,7 @@ public class MainView {
 
         while (true) {
             System.out.println("--------- Quản lý nhân sự công ty giáo dục------------");
-            System.out.println("1. Quản lý học sinh");
+            System.out.println("1. Quản lý học viên");
             System.out.println("2. Quản lý giảng viên");
             System.out.println("3. Thoát");
             System.out.println("Mời bạn nhập lựa chọn");

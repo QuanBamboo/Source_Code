@@ -55,7 +55,7 @@ public class StudentService implements IStudent {
         writeDataToFile(students);
     }
 
-    //Xóa
+    //Xóa theo id
 
     @Override
     public void remove(int id) {
@@ -69,6 +69,8 @@ public class StudentService implements IStudent {
         writeDataToFile(students);
     }
 
+
+    //Nhập thông tin từ bàn phím
     public Student inputStudent() {
         Scanner scanner = new Scanner(System.in);
         int id;
@@ -109,9 +111,10 @@ public class StudentService implements IStudent {
             }
         }
 
-
         System.out.print("Mời bạn nhập lớp: ");
         String className = scanner.nextLine();
+
+
         return new Student(id, name, address, point, className);
     }
 

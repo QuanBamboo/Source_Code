@@ -1,7 +1,7 @@
 package service;
 
 
-import entity.Student;
+
 import entity.Teacher;
 
 import java.io.*;
@@ -15,8 +15,6 @@ public class TeacherService implements ITeacher {
     @Override
     public List<Teacher> getAll() {
         List<Teacher> teachers = new ArrayList<>();
-
-
         try {
             FileInputStream fileInputStream = new FileInputStream(SRC_TEACHER);
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
@@ -32,6 +30,8 @@ public class TeacherService implements ITeacher {
         }
         return teachers;
     }
+
+
 
     public Teacher inputTeacher() {
         Scanner scanner = new Scanner(System.in);
@@ -50,7 +50,6 @@ public class TeacherService implements ITeacher {
             }
 
         }
-
         System.out.print("Mời bạn nhập tên: ");
         String name = scanner.nextLine();
 
@@ -124,8 +123,8 @@ public class TeacherService implements ITeacher {
         return temp;
     }
 
-    public void writeDataToFile(List<Teacher> teachers) {
 
+    public void writeDataToFile(List<Teacher> teachers) {
         try {
             FileOutputStream fileOutputStream = new FileOutputStream(SRC_TEACHER);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);

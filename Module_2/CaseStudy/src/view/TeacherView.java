@@ -52,13 +52,13 @@ public class TeacherView {
                     id = Integer.parseInt(scanner.nextLine());
                     boolean isFind = teacherService.isExistsTeachers(id);
                     if (!isFind) {
-                        System.out.println("Không tìm thấy student có id là " + id);
+                        System.out.println("Không tìm thấy giảng viên có id là " + id);
                     } else {
                         System.out.println("Bạn có chắc muốn xóa hay không. Nhấn Y nếu đồng ý hoặc bất kỳ kí tự khác nếu không?");
                         String isConfirm = scanner.nextLine();
                         if (isConfirm.equalsIgnoreCase("y")) {
                             teacherService.remove(id);
-                            System.out.println("Xóa học sinh thành công");
+                            System.out.println("Xóa giảng viên thành công");
                         }
                     }
                     break;

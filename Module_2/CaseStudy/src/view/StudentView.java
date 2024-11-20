@@ -16,12 +16,11 @@ public class StudentView {
         StudentService studentService = new StudentService();
         int id;
         while (true) {
-            System.out.println("******* Menu quản lý học sinh ******");
-            System.out.println("1. Hiển thị danh sách học sinh");
-            System.out.println("2. Thêm mới học sinh");
-            System.out.println("3. Sửa thông tin học sinh");
-            System.out.println("4. Xóa học sinh");
-            System.out.println("5. Tìm kiếm học sinh theo tên");
+            System.out.println("******* Menu quản lý học viên ******");
+            System.out.println("1. Hiển thị danh sách học viên");
+            System.out.println("3. Sửa thông tin học viên");
+            System.out.println("4. Xóa học viên");
+            System.out.println("5. Tìm kiếm học viên theo tên");
             System.out.println("6. Quay lại");
             System.out.print("Nhập lựa chọn: ");
             Scanner scanner = new Scanner(System.in);
@@ -60,13 +59,13 @@ public class StudentView {
                         String isConfirm = scanner.nextLine();
                         if (isConfirm.equalsIgnoreCase("y")) {
                             studentService.remove(id);
-                            System.out.println("Xóa học sinh thành công");
+                            System.out.println("Xóa học viên thành công");
                         }
                     }
                     break;
 
                 case 5:
-                    System.out.println("Tìm kiếm học sinh theo tên");
+                    System.out.println("Tìm kiếm học viên theo tên");
                     String name = scanner.nextLine();
                     students = studentService.findByName(name);
                     display(students);
@@ -81,7 +80,7 @@ public class StudentView {
 
 
     public void display(List<Student> students) {
-        System.out.println("Hiển thị danh sách học sinh");
+        System.out.println("Hiển thị danh sách học viên");
         for (Student student : students) {
             System.out.println(student);
         }
