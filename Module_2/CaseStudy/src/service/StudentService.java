@@ -24,7 +24,9 @@ public class StudentService implements IStudent {
         } catch (FileNotFoundException e) {
             System.out.println("Lỗi không tìm thấy file");
         } catch (IOException e) {
-            System.out.println("Lỗi đọc file");
+            if (e.getMessage() != null) {
+                System.out.println("Lỗi đọc file");
+            }
         } catch (ClassNotFoundException e) {
             System.out.println("Lỗi không tìm thấy class");
         }
@@ -105,7 +107,10 @@ public class StudentService implements IStudent {
             System.out.print("Mời bạn nhập điểm: ");
             try {
                 point = Double.parseDouble(scanner.nextLine());
-                break;
+                if (point < 0 || point > 10) {
+                    System.out.println("Nhập điểm không hợp lệ, vui lòng nhập lại!");
+                } else
+                    break;
             } catch (NumberFormatException e) {
                 System.out.println("Vui lòng nhập đúng định dạng số thực");
             }
@@ -147,7 +152,6 @@ public class StudentService implements IStudent {
 
     //Viết vào file
     public void writeDataToFile(List<Student> students) {
-
         try {
             FileOutputStream fileOutputStream = new FileOutputStream(SRC_STUDENT);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);

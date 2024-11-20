@@ -1,7 +1,6 @@
 package service;
 
 
-
 import entity.Teacher;
 
 import java.io.*;
@@ -24,13 +23,14 @@ public class TeacherService implements ITeacher {
         } catch (FileNotFoundException e) {
             System.out.println("Lỗi không tìm thấy file");
         } catch (IOException e) {
-            System.out.println("Lỗi đọc file");
+            if (e.getMessage() != null) {
+                System.out.println("Lỗi đọc file");
+            }
         } catch (ClassNotFoundException e) {
             System.out.println("Lỗi không tìm thấy class");
         }
         return teachers;
     }
-
 
 
     public Teacher inputTeacher() {

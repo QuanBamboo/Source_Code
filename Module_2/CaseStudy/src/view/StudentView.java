@@ -18,6 +18,7 @@ public class StudentView {
         while (true) {
             System.out.println("******* Menu quản lý học viên ******");
             System.out.println("1. Hiển thị danh sách học viên");
+            System.out.println("2. Thêm mới học viên");
             System.out.println("3. Sửa thông tin học viên");
             System.out.println("4. Xóa học viên");
             System.out.println("5. Tìm kiếm học viên theo tên");
