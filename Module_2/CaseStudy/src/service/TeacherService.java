@@ -47,17 +47,19 @@ public class TeacherService implements ITeacher {
                     break;
             } catch (NumberFormatException e) {
                 System.out.println("Vui lòng nhập đúng định dạng số");
+            }catch (Exception e) {
+                System.out.println("Lỗi khác");
             }
 
         }
         System.out.print("Mời bạn nhập tên: ");
         String name = scanner.nextLine();
 
-        while (!name.matches("^[A-Z][a-z ]{5,100}$")) {
-            System.out.println("Bạn nhập sai định dạng tên");
-            System.out.print("Mời bạn nhập lại: ");
-            name = scanner.nextLine();
-        }
+//        while (!name.matches("^[A-Z][a-z ]{5,100}$")) {
+//            System.out.println("Bạn nhập sai định dạng tên");
+//            System.out.print("Mời bạn nhập lại: ");
+//            name = scanner.nextLine();
+//        }
 
         System.out.print("Mời bạn nhập địa chỉ: ");
         String address = scanner.nextLine();
@@ -135,6 +137,8 @@ public class TeacherService implements ITeacher {
             System.out.println("Lỗi không tìm thấy file");
         } catch (IOException e) {
             System.out.println("Lỗi ghi file");
+        }catch (Exception e) {
+            System.out.println("Lỗi khác");
         }
     }
 
