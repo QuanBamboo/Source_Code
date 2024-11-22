@@ -42,6 +42,7 @@ public class StudentView {
                     if (!studentService.isExistsStudent(id)) {
                         System.out.println("Id vừa nhập không tồn tại trong danh sách");
                     } else {
+
                         Student s = studentService.inputStudent();
                         studentService.remove(id);
                         studentService.save(s);

@@ -3,9 +3,7 @@ package service;
 import entity.Student;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class StudentService implements IStudent {
     public static final String SRC_STUDENT = "src/data/student.txt";
@@ -87,7 +85,7 @@ public class StudentService implements IStudent {
                     break;
             } catch (NumberFormatException e) {
                 System.out.println("Vui lòng nhập định dạng số");
-            }catch (Exception e) {
+            } catch (Exception e) {
                 System.out.println("Lỗi khác");
             }
         }
@@ -166,7 +164,7 @@ public class StudentService implements IStudent {
             System.out.println("Lỗi không tìm thấy file");
         } catch (IOException e) {
             System.out.println("Lỗi ghi file");
-        }catch (Exception e) {
+        } catch (Exception e) {
             System.out.println("Lỗi khác");
         }
     }
